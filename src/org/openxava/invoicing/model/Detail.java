@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.openxava.annotations.*;
 
 @Entity
+@View(members="product, quantity")
 public class Detail {
 
 	@ManyToOne
@@ -20,6 +21,8 @@ public class Detail {
 	private int quantity;
 	
 	@ManyToOne(fetch=FetchType.LAZY, optional=true)
+	@ReferenceView("Simple")
+	@NoFrame
 	private Product product;
 
 	public Invoice getParent() {

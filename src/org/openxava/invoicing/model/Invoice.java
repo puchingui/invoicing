@@ -10,6 +10,10 @@ import org.openxava.calculators.*;
 import org.openxava.invoicing.calculators.*;
 
 @Entity
+@View(members="year, number, date; "
+		+ "customer;"
+		+ "details;"
+		+ "remarks")
 public class Invoice {
 
 	@Id @GeneratedValue(generator="system-uuid") @Hidden
@@ -32,6 +36,7 @@ public class Invoice {
 	private Date date;
 	
 	@ManyToOne(fetch=FetchType.LAZY, optional=false)
+	@ReferenceView("Simple")
 	private Customer customer;
 	
 	@OneToMany(mappedBy="parent", cascade=CascadeType.ALL)
