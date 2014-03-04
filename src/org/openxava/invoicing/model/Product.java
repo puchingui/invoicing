@@ -22,6 +22,10 @@ public class Product {
 	@DescriptionsList
 	private Category category;
 	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@DescriptionsList
+	private Author author;
+	
 	@Stereotype("MONEY")
 	private BigDecimal price;
 	
@@ -56,6 +60,14 @@ public class Product {
 
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
 	}
 
 	public BigDecimal getPrice() {
