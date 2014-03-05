@@ -6,7 +6,7 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
              version="1.0">
              
-    <!-- Tomcat + PostgreSQL -->
+    <!-- Tomcat + MySQL -->
     <persistence-unit name="default">
     	<provider>org.hibernate.ejb.HibernatePersistence</provider>
     	<non-jta-data-source>java:comp/env/jdbc/InvoicingDS</non-jta-data-source>
@@ -16,7 +16,7 @@
         </properties>
     </persistence-unit>  
     
-   <!-- JUnit + PostgreSQL -->
+   <!-- JUnit + MySQL -->
     <persistence-unit name="junit">
     	<provider>org.hibernate.ejb.HibernatePersistence</provider>
         <properties>
